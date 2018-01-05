@@ -12,6 +12,7 @@
 		972F6267200023D20028F9D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972F6265200023D20028F9D9 /* Main.storyboard */; };
 		972F6269200023D20028F9D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 972F6268200023D20028F9D9 /* Assets.xcassets */; };
 		972F626C200023D20028F9D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972F626A200023D20028F9D9 /* LaunchScreen.storyboard */; };
+		972F6276200025250028F9D9 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972F6275200025250028F9D9 /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,8 @@
 		972F6268200023D20028F9D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		972F626B200023D20028F9D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		972F626D200023D20028F9D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		972F6273200025250028F9D9 /* WiFiConfig.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WiFiConfig.entitlements; sourceTree = "<group>"; };
+		972F6275200025250028F9D9 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				972F6276200025250028F9D9 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				972F6260200023D20028F9D9 /* WiFiConfig */,
 				972F625F200023D20028F9D9 /* Products */,
+				972F6274200025250028F9D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +59,7 @@
 		972F6260200023D20028F9D9 /* WiFiConfig */ = {
 			isa = PBXGroup;
 			children = (
+				972F6273200025250028F9D9 /* WiFiConfig.entitlements */,
 				972F6261200023D20028F9D9 /* AppDelegate.swift */,
 				972F6263200023D20028F9D9 /* ViewController.swift */,
 				972F6265200023D20028F9D9 /* Main.storyboard */,
@@ -62,6 +68,14 @@
 				972F626D200023D20028F9D9 /* Info.plist */,
 			);
 			path = WiFiConfig;
+			sourceTree = "<group>";
+		};
+		972F6274200025250028F9D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				972F6275200025250028F9D9 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +111,11 @@
 					972F625D200023D20028F9D9 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HotspotConfiguration = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -274,9 +293,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WiFiConfig/WiFiConfig.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 438VZ6GLSU;
+				DEVELOPMENT_TEAM = B33FA55WD3;
 				INFOPLIST_FILE = WiFiConfig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Maltagliati.WiFiConfig;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,9 +310,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WiFiConfig/WiFiConfig.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 438VZ6GLSU;
+				DEVELOPMENT_TEAM = B33FA55WD3;
 				INFOPLIST_FILE = WiFiConfig/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Maltagliati.WiFiConfig;
 				PRODUCT_NAME = "$(TARGET_NAME)";
